@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;400;500;600&display=swap"
+			rel="stylesheet" />
+		<link rel="stylesheet" href="reset.css" />
+		<link rel="stylesheet" href="index.css" />
+	</head>
+	<body>
+		<div class="wrapper">
+			<div class="container">
+				<div class="header">
+					<div class="song-img">
+						<img src="./assets/img/hello.jpg" alt="" />
+					</div>
+					<div class="song-title"></div>
+					<div class="song-auth"></div>
+				</div>
+				<div class="timer">
+					<input
+						type="range"
+						name="rangeBar"
+						id="rangeBar"
+						class="rangeBar"
+						value="0" />
+					<div class="time-music">
+						<div class="duration"></div>
+						<div class="remaining"></div>
+					</div>
+				</div>
+				<div class="control-bar">
+					<div class="loop-btn btn">
+						<ion-icon name="infinite-outline"></ion-icon>
+					</div>
+					<div class="prev-btn btn">
+						<ion-icon name="play-skip-back-outline"></ion-icon>
+					</div>
+					<div class="play-btn btn">
+						<ion-icon name="play-outline"></ion-icon>
+					</div>
+					<div class="next-btn btn">
+						<ion-icon name="play-skip-forward-outline"></ion-icon>
+					</div>
+					<div class="random-btn btn">
+						<ion-icon name="shuffle-outline"></ion-icon>
+					</div>
+					<div class="vol">
+						<input
+							type="range"
+							min="0"
+							max="100"
+							step="1"
+							name="volume"
+							value="50"
+							id="volume" />
+					</div>
+				</div>
+			</div>
+		</div>
+		<audio id="audio" src="hello.mp3"></audio>
+
+		<script type="module" src="./demo.js"></script>
+		<!-- <script src="./index.js"></script> -->
+		<!-- <script src="dataSong.js"></script> -->
+		<script
+			type="module"
+			src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+		<script
+			nomodule
+			src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+	</body>
+</html>

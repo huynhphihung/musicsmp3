@@ -1,0 +1,32 @@
+{
+	"songs": [
+		{
+			"id": 1,
+			"title": "hello",
+			"author": "Adele",
+			"image": "./assets/img/hello.jpg",
+			"src": "./hello.mp3"
+		},
+		{
+			"id": 2,
+			"title": "Past live",
+			"author": "Sapiendream",
+			"image": "./assets/img/pastlive.jpg",
+			"src": "./pastlive.mp3"
+		},
+		{
+			"id": 3,
+			"title": "Chuyện rằng",
+			"author": "Thịnh Suy",
+			"image": "./assets/img/chuyenrang.jpg",
+			"src": "./chuyenrang.mp3"
+		},
+		{
+			"id": 4,
+			"title": "Hôm nay tôi buồn",
+			"author": "Phùng Khánh Linh",
+			"image": "./assets/img/homnaytoibuon.jpg",
+			"src": "./homnaytoibuon.mp3"
+		}
+	]
+}

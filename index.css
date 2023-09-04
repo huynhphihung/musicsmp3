@@ -1,0 +1,129 @@
+body {
+	background-image: linear-gradient(45deg, #93a5cf 0%, #e4efe9 100%);
+
+	font-family: 'Poppins', sans-serif;
+}
+
+.wrapper {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	max-width: 460px;
+	position: relative;
+	border-radius: 20px;
+	margin: 200px auto;
+	padding: 20px;
+	user-select: none;
+	background-color: #fff;
+	overflow: hidden;
+	z-index: 10;
+	box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.wrapper::before {
+	content: '';
+	position: absolute;
+	width: 150px;
+	height: 150%;
+	background-image: linear-gradient(to right, #fa709a 0%, #fee140 100%);
+	animation: rotate 3s infinite linear;
+	z-index: -1;
+}
+
+.wrapper::after {
+	content: '';
+	position: absolute;
+	inset: 4px;
+	background-image: linear-gradient(45deg, #93a5cf 0%, #e4efe9 100%);
+	z-index: -1;
+	border-radius: 20px;
+}
+
+.container {
+	width: 100%;
+	width: 100%;
+}
+
+@keyframes rotate {
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+.header {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 20px 0;
+}
+
+.song-img {
+	animation: rotate 3s infinite linear;
+}
+
+.song-img img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.song-img {
+	box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+	overflow: hidden;
+	width: 100px;
+	height: 100px;
+	border-radius: 100rem;
+}
+
+.song-title {
+	margin-top: 20px;
+	margin-bottom: 20px;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+.timer input {
+	width: 100%;
+	cursor: pointer;
+	margin: 20px auto;
+}
+
+.time-music {
+	display: flex;
+	justify-content: space-between;
+}
+
+.duration,
+.remaining {
+	font-size: 14px;
+	font-weight: 400;
+	color: #999;
+}
+
+.control-bar {
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	padding-top: 20px;
+	padding-bottom: 10px;
+}
+
+.play-btn {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 50px;
+	height: 50px;
+	border-radius: 100rem;
+	background-color: white;
+	box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.active {
+	color: red;
+}
+
+.btn:hover {
+	cursor: pointer;
+}
