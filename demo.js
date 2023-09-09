@@ -12,7 +12,7 @@ const author = document.querySelector('.song-auth');
 const songTitle = document.querySelector('.song-title');
 const volume = document.querySelector('#volume');
 const songImage = document.querySelector('.song-img img');
-const url = 'http://localhost:3000/songs';
+const url = 'https://api-dk96.onrender.com/songs';
 const res = await getApi(url);
 const data = await res.json();
 
