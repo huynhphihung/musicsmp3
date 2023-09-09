@@ -13,52 +13,19 @@ const songTitle = document.querySelector('.song-title');
 const volume = document.querySelector('#volume');
 const songImage = document.querySelector('.song-img img');
 const url = 'http://localhost:3000/songs';
+const res = await getApi(url);
+const data = await res.json();
+
 // KHAI BÁO BIẾN
 let isPlaying = true;
 let index = 0;
 let isLoop = false;
 let isRandom = false;
 let time;
-
-const data = [
-	{
-		id: 1,
-		title: 'hello',
-		author: 'Adele',
-		image: './assets/img/hello.jpg',
-		src: './hello.mp3',
-	},
-	{
-		id: 2,
-		title: 'Past live',
-		author: 'Sapiendream',
-		image: './assets/img/pastlive.jpg',
-		src: './pastlive.mp3',
-	},
-	{
-		id: 3,
-		title: 'Chuyện rằng',
-		author: 'Thịnh Suy',
-		image: './assets/img/chuyenrang.jpg',
-		src: './chuyenrang.mp3',
-	},
-	{
-		id: 4,
-		title: 'Hôm nay tôi buồn',
-		author: 'Phùng Khánh Linh',
-		image: './assets/img/homnaytoibuon.jpg',
-		src: './homnaytoibuon.mp3',
-	},
-];
-
 // KHAI BÁO HÀM
-// async function getApi(callback) {
-// 	await fetch(url)
-// 		.then((res) => res.json())
-// 		.then(callback);
-// 	changeSong(callback);
-// 	console.log(callback);
-// }
+async function getApi() {
+	return await fetch(url);
+}
 
 function updateDisplay() {
 	songTitle.innerHTML = data[index].title;
@@ -101,7 +68,6 @@ function changeSong(dir) {
 	}
 	if (isRandom) {
 		index = Math.floor(Math.random() * data.length);
-		console.log(index);
 	}
 	song.setAttribute('src', data[index].src);
 	updateDisplay();
@@ -159,11 +125,12 @@ function changeVol() {
 	song.volume = volume.value / 100;
 }
 
-// LẮNG NGHE SỰ KIỆN
+// // LẮNG NGHE SỰ KIỆN
 playBtn.addEventListener('click', playPauseSong);
 nextBtn.addEventListener('click', nextSong);
 prevBtn.addEventListener('click', prevSong);
 rangeBar.addEventListener('change', rangeBarUpdate);
+window.addEventListener('DOMContentLoaded', getApi);
 song.addEventListener('ended', () => {
 	if (isLoop) {
 		isPlaying = true;
@@ -177,16 +144,3 @@ randomBtn.addEventListener('click', randomSong);
 volume.addEventListener('change', changeVol);
 setInterval(displayTimer, 500);
 updateDisplay();
-
-// function start() {
-// 	getApi(renderSong);
-// 	// renderSong();
-// }
-
-// function renderSong(data) {
-// 	songTitle.innerHTML = data[index].title;
-// 	author.innerHTML = data[index].author;
-// 	songImage.setAttribute('src', data[index].image);
-// }
-
-// start();
